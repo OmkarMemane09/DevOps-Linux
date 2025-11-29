@@ -315,5 +315,126 @@ Now replaced by systemd in many distros.
 ## **42. SMTP
 SMTP → Simple Mail Transfer Protocol for sending emails.
 
+## 2. What are the main components of a Linux system?
+- **Kernel** – Core of the OS, manages hardware and system resources  
+- **Shell** – Command-line interpreter  
+- **File System** – Organizes files and directories
 
+---
+
+## 3. What is the role of the Linux kernel?
+The Linux kernel **manages system resources**, such as CPU, memory, devices, processes, and provides essential services to applications.
+
+---
+
+## 4. What is a shell in Linux?
+A shell is a **command-line interpreter** that accepts user commands and executes them.  
+Examples: **Bash**, **Zsh**, **Fish**.
+
+---
+
+## 5. What are some popular Linux distributions?
+- Ubuntu  
+- Debian  
+- Fedora  
+- CentOS  
+- Red Hat Enterprise Linux (RHEL)
+
+---
+
+## 6. How do you change file permissions in Linux?
+Use the `chmod` command.
+
+Example:
+```bash
+chmod 755 filename
+This sets:
+
+Owner → Read, write, execute
+
+Group & Others → Read, execute
+```
+## 7. What is the purpose of the grep command?
+grep is used to search for patterns in files and filter output.
+
+Example:
+```
+grep "error" logfile.txt
+```
+## 8. How do you find files in Linux?
+Use the find command.
+
+Example:
+```
+find /path -name "file.txt"
+```
+## 9. What is the purpose of the top command?
+top displays real-time system monitoring, including:
+
+Running processes
+
+CPU usage
+
+Memory usage
+
+##  10. How do you check disk usage in Linux?
+Use the df command.
+
+Example:
+
+```bash
+df -h
+-h shows output in human-readable format.
+```
+## 11. What is a symbolic link in Linux?
+A symbolic link (soft link) is a special file that points to another file or directory.
+
+Create one with:
+```bash
+ln -s target_file link_name
+```
+## 12. What is the purpose of the tar command?
+tar is used to create, extract, and manage archive files.
+
+Example:
+```bash
+tar -cvf archive.tar folder/
+```
+## 13. How do you start and stop services in Linux?
+On systemd-based systems, use:
+
+Start service:
+```bash
+systemctl start service_name
+```
+Stop service:
+```bash
+systemctl stop service_name
+```
+Check status:
+```bash
+systemctl status service_name
+```
+## 14. What is the purpose of the ping command?
+
+ping is used to test network connectivity by sending ICMP echo requests.
+
+Example:
+```bash
+ping google.com
+```
+## 15. How do you check the network configuration in Linux?
+Legacy command:
+
+```bash
+ifconfig
+```
+Modern command:
+```bash
+ip addr
+```
+or
+```bash
+ip a
+```
 ---
