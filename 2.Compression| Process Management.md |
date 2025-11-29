@@ -1,0 +1,121 @@
+File Compression, Archiving & Disk Management
+
+Managing storage efficiently is critical in Linux. This chapter covers **compressing files, creating archives, and checking disk usage**.
+
+---
+
+## ⭐ 1️⃣ File Compression
+
+### Commands:
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `gzip` | Compress a file | ```bash gzip file.txt``` → Produces `file.txt.gz` |
+| `gunzip` | Decompress a `.gz` file | ```bash gunzip file.txt.gz``` |
+| `bzip2` | Compress with bzip2 | ```bash bzip2 file.txt``` → Produces `file.txt.bz2` |
+| `bunzip2` | Decompress a `.bz2` file | ```bash bunzip2 file.txt.bz2``` |
+| `xz` | Compress with xz | ```bash xz file.txt``` → Produces `file.txt.xz` |
+| `unxz` | Decompress `.xz` file | ```bash unxz file.txt.xz``` |
+
+---
+
+## ⭐ 2️⃣ Archiving Files
+
+### Commands:
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `tar -cvf archive.tar file1 file2` | Create a tar archive | ```tar -cvf backup.tar file1 file2``` |
+| `tar -xvf archive.tar` | Extract a tar archive | ```tar -xvf backup.tar``` |
+| `tar -czvf archive.tar.gz files` | Create gzip-compressed tar | ```tar -czvf backup.tar.gz folder/``` |
+| `tar -xzvf archive.tar.gz` | Extract gzip-compressed tar | ```tar -xzvf backup.tar.gz``` |
+| `tar -cjvf archive.tar.bz2 files` | Create bzip2-compressed tar | ```tar -cjvf backup.tar.bz2 folder/``` |
+| `tar -xjvf archive.tar.bz2` | Extract bzip2-compressed tar | ```tar -xjvf backup.tar.bz2``` |
+
+---
+
+## ⭐ 3️⃣ Disk Usage & Monitoring
+
+### Commands:
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `df -h` | Show disk space usage | ```df -h``` → Human-readable |
+| `du -sh folder` | Show folder size | ```du -sh /var/log``` |
+| `du -ah` | Show all file sizes recursively | ```du -ah /home/omkar``` |
+| `ls -lh` | Show file sizes in readable format | ```ls -lh file.txt``` |
+| `ncdu` | Interactive disk usage analyzer | ```ncdu /home``` |
+
+---
+
+## ⭐ 4️⃣ File System Management
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `mount` | Mount a filesystem | ```mount /dev/sdb1 /mnt``` |
+| `umount` | Unmount a filesystem | ```umount /mnt``` |
+| `fsck` | Check and repair filesystem | ```fsck /dev/sdb1``` |
+| `blkid` | Show block device info | ```blkid``` |
+| `lsblk` | List block devices | ```lsblk``` |
+
+---
+Process Management & Monitoring
+
+Linux is a **multi-tasking OS**, and managing processes is critical. This chapter covers **process monitoring, controlling, and troubleshooting**.
+
+---
+
+## ⭐ 1️⃣ Viewing Processes
+
+### Commands:
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `ps` | Display current processes | ```ps aux``` → All processes with details |
+| `top` | Real-time process monitoring | ```top``` → Shows CPU & memory usage dynamically |
+| `htop` | Interactive process monitoring | ```htop``` → Requires installation (`sudo apt install htop`) |
+| `pgrep` | Find processes by name | ```pgrep nginx``` → Returns PIDs of nginx |
+| `pidof` | Get PID of a process | ```pidof sshd``` |
+
+---
+
+## ⭐ 2️⃣ Managing Processes
+
+### Commands:
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `kill PID` | Terminate a process by PID | ```kill 1234``` |
+| `kill -9 PID` | Force terminate a process | ```kill -9 1234``` |
+| `pkill process_name` | Kill process by name | ```pkill nginx``` |
+| `killall process_name` | Kill all instances of a process | ```killall firefox``` |
+| `nice` | Start a process with priority | ```nice -n 10 myscript.sh``` |
+| `renice` | Change running process priority | ```renice -n 5 -p 1234``` |
+
+---
+
+## ⭐ 3️⃣ Background & Foreground Jobs
+
+### Commands:
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `&` | Run a process in background | ```./myscript.sh &``` |
+| `jobs` | List background jobs | ```jobs``` |
+| `fg %1` | Bring a job to foreground | ```fg %1``` |
+| `bg %1` | Resume a job in background | ```bg %1``` |
+| `CTRL+Z` | Pause foreground process | Press during process execution |
+
+---
+
+## ⭐ 4️⃣ System Resource Monitoring
+
+### Commands:
+
+| Command | Description | Example |
+|---------|-------------|---------|
+| `free -h` | Show memory usage | ```free -h``` |
+| `vmstat` | View virtual memory stats | ```vmstat 2``` → Updates every 2 seconds |
+| `iostat` | CPU & I/O stats | ```iostat -x 5``` → Every 5 seconds |
+| `sar` | Historical system activity | ```sar -u 1 5``` → CPU usage every 1s for 5 times |
+| `uptime` | System load and uptime | ```uptime``` |
