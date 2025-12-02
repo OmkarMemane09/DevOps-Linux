@@ -1,4 +1,4 @@
-# 🐧 Linux Interview Cheat Sheet 
+#  Linux Interview Cheat Sheet 
 
 ---
 
